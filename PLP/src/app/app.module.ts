@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { AddHotelComponent } from './add-hotel/add-hotel.component';
 import { AddRoomComponent } from './add-room/add-room.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AddRoomComponent } from './add-room/add-room.component';
     HomeComponent,
     AddEmployeeComponent,
     AddHotelComponent,
-    AddRoomComponent
+    AddRoomComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
