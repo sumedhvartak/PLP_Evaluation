@@ -1,0 +1,33 @@
+<link routerLink="/maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div class="sidebar left ">
+    <ul class="list-sidebar bg-defoult">
+        <li class="nav-header "> <span> <img alt="image" class="img-circle"
+                    src="https://cdn.pixabay.com/photo/2016/11/18/22/21/architecture-1837150__340.jpg" height="250px"
+                    width="270px"> </span>
+            <a><span class="nav-label">User Panel</span></a>
+        </li>
+        <li> <a routerLink="/addEmployee" class="collapsed active" *ngIf='isAdmin()  '>
+                <span class="nav-label"> Add Employee </span>
+            </a>
+        </li>
+        <li>
+            <a routerLink="/addRoom">
+                <span class="nav-label"> Add Room </span>
+            </a>
+        </li>
+        <li>
+            <a routerLink="/addHotel">
+                <span class="nav-label"> Add Hotel </span>
+            </a>
+        </li>
+        <li> <a routerLink="/hotelList" class="collapsed active">
+                <span class="nav-label">Hotel list</span></a> </li>
+        <li> <a routerLink="/">
+                <span class="nav-label">Logout</span>
+            </a>
+        </li>
+    </ul>
+</div>

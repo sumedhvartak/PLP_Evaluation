@@ -1,0 +1,81 @@
+<div class="col-md-4 offset-md-4 mt-5">
+    <h4 >Add Hotel Form :</h4>
+    <div class="card card-body">
+       
+        <form #addHotelForm='ngForm' (ngSubmit)='addNewHotel(addHotelForm)'>
+           
+            <div class="form-group">
+                <label for="hotelName">Hotel Name  :</label>
+                <input type="text" name="hotelName" id="hotelName" #hotelName='ngModel' ngModel placeholder="Enter Hotel name "
+                    class="form-control" required>
+                    <div *ngIf='hotelName.touched && hotelName.invalid'>
+                      <p class="text-danger" *ngIf='hotelName.errors.required'>
+                          This feild is mandatory
+                      </p>
+                      <p class="text-danger" *ngIf='hotelName.errors.minlength'>
+                          Minimum 4 charachter required
+                      </p>
+                  </div>
+            </div>
+            <div class="form-group">
+                <label for="licenseNumber">Licenece Number :</label>
+                <input type="text" name="licenseNumber" id="licenseNumber" #licenseNumber='ngModel' ngModel placeholder="Enter Licenece Number"
+                    class="form-control" required>
+                    <div *ngIf='licenseNumber.touched && licenseNumber.invalid'>
+                      <p class="text-danger" *ngIf='licenseNumber.errors.required'>
+                          This feild is mandatory
+                      </p>
+                      <p class="text-danger" *ngIf='licenseNumber.errors.minlength'>
+                          Minimum 4 charachter required
+                      </p>
+                  </div>
+            </div>
+        
+           
+            
+            <div class="form-group">
+                <label for="address">Address  :</label>
+                <input type="text" name="address" id="address" #address='ngModel' ngModel placeholder="Enter Details"
+                    class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="contactNumber">Contact Number:</label>
+                <input type="text" name="contactNumber" id="contactNumber" #contactNumber='ngModel' ngModel placeholder="Enter Product Id"
+                    class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="imgUrl">Image URL :</label>
+              <input type="text" name="imgUrl" id="imgUrl" #imgUrl='ngModel' ngModel placeholder="Enter Hotel name "
+                  class="form-control" required>
+          </div>
+            <!-- <button type="submit" class="btn btn-outline-primary  float-center">ADD</button> -->
+            <button type="submit" class="btn btn-outline-primary" [disabled]='addHotelForm.invalid' data-toggle="modal" data-target="#addProductModel">
+                Add
+              </button>
+        </form>
+    </div>
+</div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="addProductModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+         <div class="modal-header">
+          <!-- <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5> -->
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div> 
+        <div class="modal-body">
+          <div class="text-danger" *ngIf="error">
+            <h4>{{error}}</h4>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
